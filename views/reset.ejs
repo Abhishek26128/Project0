@@ -1,0 +1,25 @@
+<%-include("./partials/header")%>
+
+<div class="container">
+	<div class="column">
+		<h1 style="text-align: center;">
+			Reset Password
+		</h1><hr>
+		<form action="/reset/<%=token%>" method="POST" style="width: 30%; margin: 40px auto;">
+			<div class="form-group">
+				<input class="form-control" type="password" name="newPswrd" placeholder="New Password">
+            </div><br>
+            <div class="form-group">
+				<input class="form-control" type="password" name="confirmPswrd" placeholder="Confirm Password">
+			</div><br>
+			<div class="form-group">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					Reset Password
+		      	</button>
+			</div><br>
+			<a href="#">Go Back</a>
+		</form>	
+	</div>
+</div>
+
+<%-include("./partials/footer")%>

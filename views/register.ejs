@@ -1,0 +1,37 @@
+<%-include("./partials/header")%>
+
+<div class="container">
+	<div class="column">
+		<h1 style="text-align: center;">
+			Sign Up
+		</h1><hr>
+		<form action="/register" method="POST" enctype="multipart/form-data" style="width: 30%; margin: 40px auto;">
+			<div class="form-group">
+				<input class="form-control" type="text" name="username" placeholder="Username">
+			</div><br>
+			<div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+			</div><br>
+			<div class="form-group">
+				<input class="form-control" type="text" name="firstname" placeholder="First name">
+			</div><br>
+			<div class="form-group">
+				<input class="form-control" type="text" name="lastname" placeholder="Last name">
+			</div><br>
+			<div class="form-group">
+				<input class="form-control" type="text" name="email" placeholder="Email">
+			</div><br>
+			<div class="form-group">
+				<label for="userAvatar">Avatar</label>
+				<input id="userAvatar" type="file" name="avatar" accept="image/*" required>
+			</div><br>
+			<div class="form-group">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					Sign Up
+		      	</button>
+			</div><br>
+			<a href="/login">Already Registered? Log In</a>
+		</form>	
+	</div>
+</div>
+<%-include("./partials/footer")%>

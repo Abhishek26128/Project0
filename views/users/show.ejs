@@ -1,0 +1,43 @@
+<%-include("../partials/header")%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1> User Profile </h1><hr>
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%=foundUser.avatar%>" alt="user avatar image" style="height: 50vh; width: 100%;">
+                <div class="caption">
+                    <em><h3> <%=foundUser.firstName + " " + foundUser.lastName%> </h3></em>
+                    <em>Email : </em><a href="mailto:<%= foundUser.email %>"> <%= foundUser.email %> </a>
+                    <h2> Bio </h2>
+                    Lorem ipsum, or lipsum as it is sometimes known, 
+                    is dummy text used in laying out print, graphic or web designs. 
+                    The passage is attributed to an unknown typesetter in the 15th century who is 
+                    thought to have scrambled parts of Cicero's De Finibus 
+                    Bonorum et Malorum for use in a type specimen book.
+                </div>
+            </div>
+        </div><br><br><br>
+        <div class="col-sm-9">  
+            <div class="container">
+                <h2><%= foundUser.firstName + " " + foundUser.lastName %>'s Campgrounds</h2>
+                <div class="row text-center">  
+                    <% campgrounds.forEach(function(campground) { %>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="thumbnail">
+                                <a href="/campgrounds/<%= campground.id %>">
+                                    <img src="<%= campground.image %>" style="height: 200px; width: 100%;">
+                                    <div class="caption">
+                                        <h4><%= campground.name %></h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>   
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include("../partials/footer")%>
